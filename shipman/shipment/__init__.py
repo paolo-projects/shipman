@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 import json
 
 
@@ -7,19 +7,15 @@ class ShipmentStep:
     location: str
     message: str
 
-    def json(self) -> str:
-        return json.dumps({
-            'time': self.time,
-            'location': self.location,
-            'message': self.message
-        })
-
-    def dict(self) -> dict:
+    def dict(self) -> Dict:
         return {
             'time': self.time,
             'location': self.location,
             'message': self.message
         }
+
+    def json(self) -> str:
+        return json.dumps(self.dict())
 
 
 class Shipment:
@@ -29,7 +25,7 @@ class Shipment:
     arrival: str
     steps: List[ShipmentStep]
 
-    def dict(self) -> dict:
+    def dict(self) -> Dict:
         return {
             'code': self.code,
             'date': self.date,
