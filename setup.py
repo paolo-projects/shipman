@@ -10,5 +10,5 @@ setup(
         'requests',
     ],
     packages=find_packages(),
-    scripts=['bin/shipman.py']
+    scripts=['bin/shipman']
 )
