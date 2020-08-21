@@ -1,7 +1,7 @@
-from scraper.gls import GlsScraper
-from scraper.amazon import AmazonScraper
-from scraper.dhl import DhlScraper
-from scraper.basescraper import BaseScraper
+from shipman.scraper.gls import GlsScraper
+from shipman.scraper.amazon import AmazonScraper
+from shipman.scraper import DhlScraper
+from shipman.scraper import BaseScraper
 from typing import Dict, Type
 
 

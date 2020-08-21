@@ -1,6 +1,6 @@
 from typing import Tuple, List
-from scraper import scrapers
-from printer import printers
+from shipman.scraper import scrapers
+from shipman.printer import printers
 import argparse
 from argparse import Namespace
 

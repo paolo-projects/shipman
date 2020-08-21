@@ -1,6 +1,6 @@
-from scraper.basescraper import BaseScraper
-from shipment import Shipment, ShipmentStep
-from utils.unquote import unquote
+from shipman.scraper import BaseScraper
+from shipman.shipment import Shipment, ShipmentStep
+from shipman.utils.unquote import unquote
 import re
 import requests
 

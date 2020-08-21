@@ -1,5 +1,5 @@
-from printer.baseprinter import BasePrinter
-from shipment import Shipment
+from shipman.printer.baseprinter import BasePrinter
+from shipman.shipment import Shipment
 
 
 class bcolors:

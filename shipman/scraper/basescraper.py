@@ -1,4 +1,4 @@
-from shipment import Shipment
+from shipman.shipment import Shipment
 from typing import Optional
 
 

@@ -1,7 +1,7 @@
-from printer.console import ConsolePrinter
-from printer.json import JsonPrinter
-from printer.tab import TabPrinter
-from printer.baseprinter import BasePrinter
+from shipman.printer.console import ConsolePrinter
+from shipman.printer.json import JsonPrinter
+from shipman.printer.tab import TabPrinter
+from shipman.printer.baseprinter import BasePrinter
 from typing import Dict, Type
 
 printers: Dict[str, Type[BasePrinter]] = {

@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 import sys
 
-from scraper import basescraper, scrapers
-from printer import baseprinter, printers
-from utils.arguments import require_arguments
+from shipman.scraper import basescraper, scrapers
+from shipman.printer import printers
+from shipman.printer import baseprinter
+from shipman.utils.arguments import require_arguments
 
 
 def main():
