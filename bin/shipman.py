@@ -3,7 +3,7 @@ import sys
 
 from scraper import basescraper, scrapers
 from printer import baseprinter, printers
-from arguments import require_arguments
+from utils.arguments import require_arguments
 
 
 def main():

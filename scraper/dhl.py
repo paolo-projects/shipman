@@ -1,6 +1,5 @@
 from scraper.basescraper import BaseScraper
 from shipment import Shipment, ShipmentStep
-import json
 import requests
 
 
