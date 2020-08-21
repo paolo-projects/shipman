@@ -1,4 +1,4 @@
-from shipman.printer.baseprinter import BasePrinter
+from shipman.printer.base import BasePrinter
 from shipman.shipment import Shipment
 
 

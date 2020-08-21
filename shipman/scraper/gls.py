@@ -1,4 +1,4 @@
-from shipman.scraper import BaseScraper
+from shipman.scraper.base import BaseScraper
 from shipman.shipment import Shipment, ShipmentStep
 from shipman.utils.unquote import unquote
 import re

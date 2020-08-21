@@ -1,5 +1,5 @@
-from shipman.shipment import Shipment
 from typing import Optional
+from shipman.shipment import Shipment
 
 
 class BaseScraper:

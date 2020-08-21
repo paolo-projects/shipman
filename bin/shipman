@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 import sys
 
-from shipman.scraper import basescraper, scrapers
+from shipman.scraper import scrapers
+from shipman.scraper.base import BaseScraper
 from shipman.printer import printers
-from shipman.printer import baseprinter
+from shipman.printer import BasePrinter
 from shipman.utils.arguments import require_arguments
 
 
@@ -11,12 +12,12 @@ def main():
     args = require_arguments()
     tracking = args.tracking_number
 
-    shipment_scraper: basescraper.BaseScraper = scrapers[args.service]()
+    shipment_scraper: BaseScraper = scrapers[args.service]()
 
     try:
         shipment_scraper.scrape(tracking)
         shipment = shipment_scraper.get_shipment()
-        shipment_printer: baseprinter.BasePrinter = printers[args.printer]()
+        shipment_printer: BasePrinter = printers[args.printer]()
         shipment_printer.print(shipment)
     except Exception as err:
         print("%s: %s" % (err.__class__.__name__, err.args[0]), file=sys.stderr)
