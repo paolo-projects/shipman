@@ -9,6 +9,7 @@ Currently supports:
 - *GLS*
 - *Amazon* (partial, unreliable)
 - *DHL*
+- *TNT*
 
 ## Usage
 
