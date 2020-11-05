@@ -1,17 +1,6 @@
 from shipman.printer.base import BasePrinter
 from shipman.shipment import Shipment
-
-
-class bcolors:
-    PURPLE = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    CYAN = '\033[96m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+from shipman.colorize import *
 
 
 def maxlen(arg1, arg2, *argv):
@@ -27,14 +16,10 @@ class ConsolePrinter(BasePrinter):
         n = max(50, maxlen(shipment.code, shipment.date,
                            shipment.departure, shipment.arrival)+14)
         print('='*n)
-        print(('| Tracking: {}{:<'+str(n-14)+'}{} |').format(bcolors.PURPLE,
-                                                             shipment.code, bcolors.ENDC))
-        print(('| Data: {}{:<'+str(n-10)+'}{} |').format(bcolors.WARNING,
-                                                         shipment.date, bcolors.ENDC))
-        print(('| Da: {}{:<'+str(n-8)+'}{} |').format(bcolors.CYAN,
-                                                      shipment.departure, bcolors.ENDC))
-        print(('| A: {}{:<'+str(n-7)+'}{} |').format(bcolors.CYAN,
-                                                     shipment.arrival, bcolors.ENDC))
+        print(('| Tracking: {:<'+str(n-5)+'} |').format(colorize(shipment.code, purple)))
+        print(('| Data: {:<'+str(n-1)+'} |').format(colorize(shipment.date, orange)))
+        print(('| Da: {:<'+str(n+1)+'} |').format(colorize(shipment.departure, cyan)))
+        print(('| A: {:<'+str(n+2)+'} |').format(colorize(shipment.arrival, cyan)))
         print('='*n)
 
         therealmax = 0
@@ -46,12 +31,9 @@ class ConsolePrinter(BasePrinter):
         for step in shipment.steps:
             n = therealmax
             print('~'*n)
-            print(('| {}{:<' + str(n-4) + '}{} |').format(bcolors.WARNING,
-                                                          step.time, bcolors.ENDC))
-            print(('| {}{:<' + str(n-4) + '}{} |').format(bcolors.CYAN,
-                                                          step.location, bcolors.ENDC))
-            print(('| {}{}{:<' + str(n-4) + '}{} |').format(bcolors.UNDERLINE,
-                                                            bcolors.BOLD, step.message, bcolors.ENDC))
+            print(('| {:<' + str(n+5) + '} |').format(colorize(step.time, orange)))
+            print(('| {:<' + str(n+5) + '} |').format(colorize(step.location, cyan)))
+            print(('| {:<' + str(n+4) + '} |').format(colorize(step.message, underline, bold)))
 
         print('~'*therealmax)
 
