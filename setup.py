@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Shipman',
-    version='1.0.2',
+    version='1.0.3',
     url='https://github.com/paolo-projects/shipman',
     author='Paolo',
     license='GPLv3',
