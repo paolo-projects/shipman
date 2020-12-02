@@ -10,6 +10,10 @@ Currently supports:
 - *Amazon* (partial, unreliable)
 - *DHL*
 - *TNT*
+- *BRT*
+- *Poste Italiane*
+  
+  (Note though that Poste Italiane server randomly requests a recaptcha verification so it could not work reliably)
 
 ## Usage
 
@@ -22,9 +26,9 @@ pip install git+https://github.com/paolo-projects/shipman.git#egg=shipman
 Then run
 
 ```shell
-shipman [-p pretty|json|tab] -s gls|amazon|dhl <tracking>
+shipman [-h] [-p {pretty,json,tab}] -s {gls,amazon,dhl,tnt,brt,posteit} tracking_number
 ```
 
 - The optional argument `-p pretty|json|tab` modifies the way the output is formatted. 
 Defaults to pretty if not specified
-- The argument `-s gls|amazon|dhl` selects which service the tracking number belongs to
+- The argument `-s {gls,amazon,dhl,tnt,brt,posteit}` selects which service the tracking number belongs to
