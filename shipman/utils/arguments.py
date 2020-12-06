@@ -3,6 +3,7 @@ from shipman.scraper import scrapers
 from shipman.printer import printers
 import argparse
 from argparse import Namespace
+import argcomplete
 
 
 def build_options() -> Tuple[List[str], List[str]]:
@@ -20,6 +21,8 @@ def require_arguments() -> Namespace:
     scraper_args, printer_args = build_options()
 
     ap = argparse.ArgumentParser(description="Get the tracking info from one of the supported services")
+
+    argcomplete.autocomplete(ap)
 
     ap.add_argument("-p", "--printer", type=str, choices=printer_args, default=printer_args[0], required=False,
                     help="The printer to use. Defaults to pretty")

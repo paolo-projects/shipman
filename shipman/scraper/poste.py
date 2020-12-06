@@ -54,10 +54,6 @@ class PosteScraper(BaseScraper):
                 step.location = movement['luogo']
                 step.message = movement['statoLavorazione']
                 self.shipment.steps.append(step)
-
-            # Status updates are ordered bottom (oldest) to top (latest)
-            # We reverse it so you can have a quicker look at the latest status
-            self.shipment.steps.reverse()
         except Exception as e:
             raise LookupError('Bad response data')
 

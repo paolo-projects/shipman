@@ -8,6 +8,7 @@ setup(
     license='GPLv3',
     install_requires=[
         'requests',
+        'argcomplete'
     ],
     packages=find_packages(),
     scripts=['bin/shipman']
