@@ -10,7 +10,7 @@ class GlsScraper(BaseScraper):
     detailsPattern = re.compile(
         r'<h3>DETTAGLIO SPEDIZIONE</h3>.+<td><b>N. Spedizione:</b>.+?<span>(.+?)</span>.+?<b>Data Partenza:</b>.+?'
         r'<span>(.+?)</span>.+<td><b>Sede Mittente:</b></td>.+?<span>(.+?)</span>.+<td><b>Destinatario:</b></td>.+?'
-        r'<span>\s+(.+?)</span>.+<h3>ESITO SPEDIZIONE</h3>.+?<tr>.+?</tr>', re.DOTALL)
+        r'<span>\s+(.+?)</span>.+<h3 id="h3esito">ESITO SPEDIZIONE</h3>.+?<tr>.+?</tr>', re.DOTALL)
     recursivePattern = re.compile(
         r'<tr>.*?<td>(.+?)</td>.*?<td>(.+?)</td>.*?<td>(.+?)</td>.*?</tr>', re.DOTALL)
 
